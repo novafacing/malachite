@@ -101,6 +101,7 @@
     clippy::upper_case_acronyms,
     unstable_name_collisions
 )]
+#![cfg_attr(feature = "const", feature(const_trait_impl))]
 
 extern crate itertools;
 extern crate rand;

@@ -16,6 +16,16 @@ pub trait AbsAssign {
     fn abs_assign(&mut self);
 }
 
+#[cfg(feature = "const")]
+#[const_trait]
+/// Takes the absolute value of a number and converts to the unsigned equivalent.
+pub trait UnsignedAbs {
+    type Output;
+
+    fn unsigned_abs(self) -> Self::Output;
+}
+
+#[cfg(not(feature = "const"))]
 /// Takes the absolute value of a number and converts to the unsigned equivalent.
 pub trait UnsignedAbs {
     type Output;
